@@ -40,22 +40,16 @@ function Details(props)
 
 	const handleToggleShare = () =>
 	{
-		setShare(
-			!share
-
-		);
+		setShare(!share);
 
 	}
 
 	const handleRead = useCallback(delayed =>
 	{
-		if(delayed)
-		{
-			setInternalError(false);
+		setIsLoading(true);
 
-		}
-		else
-			setIsLoading(true);
+		if(delayed)
+			setInternalError(false);
 
 		setTimeout(() =>
 		{
@@ -63,8 +57,6 @@ function Details(props)
 			{
 				if(data)
 				{
-					setIsLoading(false);
-
 					if(data.error && data.error.internal)
 					{
 						setSnackbar({
@@ -76,7 +68,19 @@ function Details(props)
 
 					}
 
+					setIsLoading(false);
+
 				}
+
+			}).catch(error =>
+			{
+				setSnackbar({
+					index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+				});
+
+				setInternalError(true);
+				setIsLoading(false);
 
 			});
 

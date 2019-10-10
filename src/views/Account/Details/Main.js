@@ -83,10 +83,7 @@ function Main({ history, user })
 
 		if(isValid === true)
 		{
-			setIsLoading(
-				true
-
-			);
+			setIsLoading(true);
 
 			setSnackbar({
 				message: "Processing data! Please wait a few moments."
@@ -131,11 +128,6 @@ function Main({ history, user })
 						}
 						else
 						{
-							setIsLoading(
-								false
-
-							);
-
 							if(!data.error.internal)
 							{
 								setForm({
@@ -158,9 +150,20 @@ function Main({ history, user })
 
 							}
 
+							setIsLoading(false);
+
 						}
 
 					}
+
+				}).catch(error =>
+				{
+					setSnackbar({
+						index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+					});
+
+					setIsLoading(false);
 
 				});
 

@@ -19,10 +19,7 @@ function List({ history })
 
 	const handleChangeTab = (tab) =>
 	{
-		setTab(
-			tab
-
-		);
+		setTab(tab);
 
 		history.replace("/#" + tab);
 
@@ -30,10 +27,7 @@ function List({ history })
 
     const handleChangeCategory = (event) =>
 	{
-		setCategory(
-			event.currentTarget.dataset.category
-
-		);
+		setCategory(event.currentTarget.dataset.category);
 
     }
 

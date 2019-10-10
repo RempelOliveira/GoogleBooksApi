@@ -50,6 +50,13 @@ function Main({ history, book, onClickShare })
 
 				}
 
+			}).catch(error =>
+			{
+				setSnackbar({
+					index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+				});
+
 			});
 
 		}

@@ -86,10 +86,7 @@ function Main({ history, book, reviews, isLoading, isLoadingAll, internalError, 
 
 		if(isValid === true)
 		{
-			setIsLoadingCreate(
-				true
-
-			);
+			setIsLoadingCreate(true);
 
 			setSnackbar({
 				message: "Processing data! Please wait a few moments."
@@ -114,11 +111,6 @@ function Main({ history, book, reviews, isLoading, isLoadingAll, internalError, 
 				{
 					if(data)
 					{
-						setIsLoadingCreate(
-							false
-
-						);
-
 						if(!data.error)
 						{
 							setSnackbar({
@@ -179,7 +171,18 @@ function Main({ history, book, reviews, isLoading, isLoadingAll, internalError, 
 
 						}
 
+						setIsLoadingCreate(false);
+
 					}
+
+				}).catch(error =>
+				{
+					setSnackbar({
+						index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+					});
+
+					setIsLoadingCreate(false);
 
 				});
 

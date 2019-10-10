@@ -70,6 +70,22 @@ function Reviews(props)
 
 				}
 
+			}).catch(error =>
+			{
+				setSnackbar({
+					index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+				});
+
+				if(!all)
+				{
+					setIsLoading(false);
+					setInternalError(true);
+
+				}
+
+				setIsLoadingAll(false);
+
 			});
 
 		}, delayed ? 500 : 0);

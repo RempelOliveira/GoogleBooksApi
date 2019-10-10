@@ -96,10 +96,7 @@ function Main({ history, email, loading, lastPage })
 
 		if(isValid === true)
 		{
-			loading.setIsLoading(
-				true
-
-			);
+			loading.setIsLoading(true);
 
 			setSnackbar({
 				message: "Processing data! Please wait a few moments."
@@ -144,11 +141,6 @@ function Main({ history, email, loading, lastPage })
 						}
 						else
 						{
-							loading.setIsLoading(
-								false
-
-							);
-
 							if(!data.error.internal)
 							{
 								setForm({
@@ -171,9 +163,20 @@ function Main({ history, email, loading, lastPage })
 
 							}
 
+							loading.setIsLoading(false);
+
 						}
 
 					}
+
+				}).catch(error =>
+				{
+					setSnackbar({
+						index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+					});
+
+					loading.setIsLoading(false);
 
 				});
 

@@ -61,6 +61,13 @@ function Header({ history, book })
 
 				}
 
+			}).catch(error =>
+			{
+				setSnackbar({
+					index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+				});
+
 			});
 
 		}

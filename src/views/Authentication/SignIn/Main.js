@@ -120,19 +120,25 @@ function Main({ history, loading, lastPage })
 						}
 						else
 						{
-							loading.setIsLoading(
-								false
-
-							);
-
 							setSnackbar({
 								index: shortid.generate(), type: "danger", message: data.error.internal
 
 							});
 
+							loading.setIsLoading(false);
+
 						}
 
 					}
+
+				}).catch(error =>
+				{
+					setSnackbar({
+						index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+					});
+
+					loading.setIsLoading(false);
 
 				});
 
@@ -191,22 +197,14 @@ function Main({ history, loading, lastPage })
 				{
 					if(data)
 					{
-						loading.setIsLoading(
-							false
-
-						);
-
 						if(!data.error)
 						{
-							lastPage.setIsLastPage(
-								false
-
-							);
-
 							setSnackbar({
 								index: shortid.generate(), type: "success", message: "Check your email for password recovery instructions."
 
 							});
+
+							lastPage.setIsLastPage(false);
 
 						}
 						else
@@ -218,7 +216,18 @@ function Main({ history, loading, lastPage })
 
 						}
 
+						loading.setIsLoading(false);
+
 					}
+
+				}).catch(error =>
+				{
+					setSnackbar({
+						index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+					});
+
+					loading.setIsLoading(false);
 
 				});
 

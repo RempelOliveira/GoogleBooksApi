@@ -87,6 +87,16 @@ function Main({ tab, category})
 				else
 					setSkip(0);
 
+			}).catch(error =>
+			{
+				setSnackbar({
+					index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+				});
+
+				setInternalError(true);
+				setIsLoading(false);
+
 			});
 
 		}, delayed ? 500 : 0);

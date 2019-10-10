@@ -128,11 +128,6 @@ function Main({ history, loading, lastPage })
 						}
 						else
 						{
-							loading.setIsLoading(
-								false
-
-							);
-
 							if(!data.error.internal)
 							{
 								if(data.error.name)
@@ -167,9 +162,20 @@ function Main({ history, loading, lastPage })
 
 							}
 
+							loading.setIsLoading(false);
+
 						}
 
 					}
+
+				}).catch(error =>
+				{
+					setSnackbar({
+						index: shortid.generate(), type: "danger", message: "An internal error occurred."
+
+					});
+
+					loading.setIsLoading(false);
 
 				});
 
