@@ -2,17 +2,14 @@ const jwt 	 = require("jsonwebtoken");
 const cryptr = require("cryptr");
 const config = require("../configs/keys.config.js");
 
+const Crypt =
+	new cryptr(config.jwt.secrect);
+
 const Users =
 	require("../models/Users");
 
-const Books =
-	require("../models/Books");
-
 const SendMail =
 	require("../configs/nodemailer.config.js");
-
-const Crypt =
-	new cryptr(config.jwt.secrect);
 
 module.exports =
 {
