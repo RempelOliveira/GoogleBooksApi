@@ -14,7 +14,10 @@ function Details({ history })
 	useEffect(() =>
 	{
 		if(!user)
-			history.push("/sign-in");
+			history.push({
+				pathname: "/sign-in", state: { route: history.location.pathname }
+
+			});
 
 	}, [history, user]);
 

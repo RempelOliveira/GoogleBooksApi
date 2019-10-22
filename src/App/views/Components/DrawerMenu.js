@@ -156,7 +156,7 @@ function DrawerMenu()
 							!user ||
 								<li>
 									<DelayLink
-										to 		= "account"
+										to 		= "/account"
 										onClick	= { handleActive }
 
 									>
@@ -168,21 +168,36 @@ function DrawerMenu()
 							user && user.type === "admin"
 								?
 									<li>
-										<DelayLink
-											to 		= "control-panel/books"
-											onClick	= { handleActive }
+										<p>Control Panel</p>
+										<ul>
+											<li>
+												<DelayLink
+													to 		= "/control-panel/books"
+													onClick	= { handleActive }
 
-										>
-											Control Panel
-										</DelayLink>
+												>
+													Books
+												</DelayLink>
+											</li>
+											<li>
+												<DelayLink
+													to 		= "/control-panel/users"
+													onClick	= { handleActive }
+
+												>
+													Users
+												</DelayLink>
+											</li>
+										</ul>
 									</li>
+
 								:
 									""
 
 						}
 						<li>
 							<DelayLink
-								to 		= "privacy-and-terms"
+								to 		= "/privacy-and-terms"
 								onClick	= { handleActive }
 
 							>

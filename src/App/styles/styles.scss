@@ -540,6 +540,16 @@ input::-ms-reveal
 
 					}
 
+					& p
+					{
+						font   : normal 14px AvenirHeavy;
+						color  : #292929;
+						margin : 0 12px;
+						padding: 11px 0 8px 0;
+						display: block;
+
+					}
+
 					&:first-child
 					{
 						& a
@@ -579,6 +589,57 @@ input::-ms-reveal
 						padding	  	 : 10px 12px 9px 12px;
 						background	 : #039be5;
 						border-radius: 4px;
+
+					}
+
+					& ul
+					{
+						height 		 : auto;
+						margin		 : 0 12px;
+						border-bottom: 1px solid #ebebeb;
+
+						& li
+						{
+							& a
+							{
+								font   		 : normal 12px AvenirMedium;
+								margin	     : 0 0 0 12px;
+								padding	     : 12px 0 11px 0;
+								border-bottom: 1px solid #ebebeb;
+
+							}
+
+							&:first-child
+							{
+								& a
+								{
+									padding	  : 0 0 11px 0;
+									border-top: none;
+
+								}
+
+							}
+
+							&:last-child
+							{
+								padding			: 0;
+								margin-top		: 0;
+								background-color: initial;
+
+								& a:not(.button)
+								{
+									font   	     : normal 12px AvenirMedium;
+									margin	     : 0 0 0 12px;
+									padding	     : 12px 0 11px 0;
+									text-align   : left;
+									line-height	 : initial;
+									border-bottom: none;
+
+								}
+
+							}
+
+						}
 
 					}
 

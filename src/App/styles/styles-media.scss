@@ -103,7 +103,8 @@
 
 					& li
 					{
-						& a
+						& a,
+						& p
 						{
 							margin: 0 24px;
 
@@ -129,6 +130,42 @@
 						{
 							font   : normal 12px AvenirHeavy;
 							padding: 12px 14px 11px 14px;
+
+						}
+
+						& ul
+						{
+							margin: 0 24px;
+
+							& li
+							{
+								& a
+								{
+									margin: 0 0 0 24px;
+
+								}
+
+								&:first-child
+								{
+									& a
+									{
+										margin: 0 0 0 24px;
+
+									}
+
+								}
+
+								&:last-child
+								{
+									& a:not(.button)
+									{
+										margin: 0 0 0 24px;
+
+									}
+
+								}
+
+							}
 
 						}
 
@@ -572,6 +609,13 @@
 							padding: 15px 0 14px 0;
 
 						}
+						
+						& p
+						{
+							font   : normal 16px AvenirHeavy;
+							padding: 15px 0 12px 0;
+						
+						}
 
 						&:last-child
 						{
@@ -580,6 +624,42 @@
 								font  	   : normal 11px AvenirHeavy;
 								margin	   : 2px 12px 3px 12px;
 								line-height: 1px;
+
+							}
+
+						}
+
+						& ul
+						{
+							& li
+							{
+								& a
+								{
+									font   : normal 14px AvenirMedium;
+									padding: 15px 0 15px 0;
+
+								}
+
+								&:first-child
+								{
+									& a
+									{
+										padding: 0 0 15px 0;
+
+									}
+
+								}
+
+								&:last-child
+								{
+									& a:not(.button)
+									{
+										font   : normal 14px AvenirMedium;
+										padding: 16px 0 15px 0;
+
+									}
+
+								}
 
 							}
 
@@ -1032,6 +1112,13 @@
 
 						}
 
+						& p
+						{
+							font   : normal 20px AvenirHeavy;
+							padding: 15px 0 14px 0;
+
+						}
+
 						&:last-child
 						{
 							& a:not(.button)
@@ -1048,6 +1135,57 @@
 						{
 							font   : normal 13px AvenirHeavy;
 							padding: 14px 18px;
+
+						}
+
+						& ul
+						{
+							height 		 : auto;
+							margin		 : 0 24px;
+							border-bottom: 1px solid #ebebeb;
+
+							& li
+							{
+								a
+								{
+									font   		 : normal 15px AvenirMedium;
+									margin	     : 0 0 0 24px;
+									padding	     : 19px 0 20px 0;
+									border-bottom: 1px solid #ebebeb;
+
+								}
+
+								&:first-child
+								{
+									& a
+									{
+										padding	  : 0 0 20px 0;
+										border-top: none;
+
+									}
+
+								}
+
+								&:last-child
+								{
+									padding			: 0;
+									margin-top		: 0;
+									background-color: initial;
+
+									& a:not(.button)
+									{
+										font   	     : normal 15px AvenirMedium;
+										margin	     : 0 0 0 24px;
+										padding	     : 19px 0 20px 0;
+										text-align   : left;
+										line-height	 : initial;
+										border-bottom: none;
+
+									}
+
+								}
+
+							}
 
 						}
 
