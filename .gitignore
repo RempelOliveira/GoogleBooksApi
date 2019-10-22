@@ -1,2 +1,4 @@
 package-lock.json
 node_modules
+/src/App/styles/styles-media.css
+/src/App/styles/styles.css

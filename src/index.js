@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./App/store";
 
 import * as sw from "./service-worker";
 
@@ -12,7 +12,7 @@ import { faWhatsapp, faSkype } from "@fortawesome/free-brands-svg-icons";
 import { faBookmark as faBookmarkRegular } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark as faBookmarkSolid, faChevronLeft, faCommentDots, faHeart, faShare, faTimes, faEnvelopeOpenText, faEye, faEyeSlash, faCheckCircle, faExclamationCircle, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
-import Router from "./views/Router";
+import Router from "./Shared/Router";
 
 library.add(faBookmarkRegular, faBookmarkSolid, faChevronLeft, faCommentDots, faHeart, faShare, faTimes, faEnvelopeOpenText, faWhatsapp, faSkype, faEye, faEyeSlash, faCheckCircle, faExclamationCircle, faExclamationTriangle);
 
