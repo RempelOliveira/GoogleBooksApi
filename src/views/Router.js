@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "../styles/styles.css";
 import "../styles/styles-media.css";
 
-import { isAuth } from "../utils/UserAuthentication";
+import { isAuth, isAdmin } from "../utils/UserAuthentication";
 
 import BooksList from "./Books/List";
 import BooksDetails from "./Books/Details";
@@ -16,6 +16,7 @@ import SignIn from "./Authentication/SignIn";
 import SignUp from "./Authentication/SignUp";
 
 import Account from "./Account/Details";
+import ControlPanel from "./Cms/ControlPanel";
 import RecoverPassword from "./Account/RecoverPassword";
 
 import PageNotFound from "./404.js";
@@ -24,8 +25,8 @@ function Router()
 {
 	const PrivateRoute = ({ component: Component, ...rest }) =>
 	(
-		<Route {...rest} render={ (props) =>
-			isAuth() ? <Component {...props} /> : <Redirect to="/" />
+		<Route {...rest} render={props =>
+			(rest.admin ? isAdmin() : isAuth()) ? <Component {...props} /> : <Redirect to="/" />
 
 		} />
 
@@ -46,6 +47,8 @@ function Router()
 				<Route exact path="/sign-up" component={ SignUp } />
 
 				<PrivateRoute exact path="/account" component={ Account } />
+				<PrivateRoute exact path="/control-panel" component={ ControlPanel } admin={ true } />
+
 				<Route exact path="/recover-password/:email" component={ RecoverPassword } />
 
 				<Route

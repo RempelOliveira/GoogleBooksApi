@@ -37,6 +37,7 @@ module.exports =
 				let payload =
 				{
 					id	 : user._id,
+					type : user.type,
 					name : user.name,
 					email: user.email,
 					score: user.score
@@ -90,6 +91,7 @@ module.exports =
 					let payload =
 					{
 						id	 : user._id,
+						type : user.type,
 						name : user.name,
 						email: user.email,
 						score: user.score
@@ -143,6 +145,7 @@ module.exports =
 						let payload =
 						{
 							id	 : user._id,
+							type : user.type,
 							name : user.name,
 							email: user.email,
 							score: user.score
@@ -274,6 +277,7 @@ module.exports =
 								let payload =
 								{
 									id	 : user._id,
+									type : user.type,
 									name : user.name,
 									email: user.email,
 									score: user.score

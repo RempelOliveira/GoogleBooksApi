@@ -10,6 +10,12 @@ function isAuth()
 
 };
 
+function isAdmin()
+{
+	return isAuth() && getAuthUser().type === "admin";
+
+};
+
 function setAuthUser(token)
 {
 	if(token)
@@ -21,7 +27,7 @@ function setAuthUser(token)
 
 			sessionStorage.setItem(TOKEN_KEY, token);
 
-			return { id: user.id, name: user.name, email: user.email, score: user.score };
+			return { id: user.id, type: user.type, name: user.name, email: user.email, score: user.score };
 
 		}
 		catch (err){ return; }
@@ -47,7 +53,7 @@ function getAuthUser(getToken = false)
 				const { user } =
 					jwt.verify(token, TOKEN_SECRET);
 
-				return { id: user.id, name: user.name, email: user.email, score: user.score };
+				return { id: user.id, type: user.type, name: user.name, email: user.email, score: user.score };
 
 			}
 			catch (err){ return; }
@@ -69,4 +75,4 @@ function setAuthPassword(password)
 
 };
 
-export { isAuth, setAuthUser, getAuthUser, setAuthPassword };
+export { isAuth, isAdmin, setAuthUser, getAuthUser, setAuthPassword };

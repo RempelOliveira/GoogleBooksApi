@@ -163,6 +163,21 @@ function DrawerMenu()
 										Account
 									</DelayLink>
 								</li>
+						}
+						{
+							user && user.type === "admin"
+								?
+									<li>
+										<DelayLink
+											to 		= "control-panel"
+											onClick	= { handleActive }
+
+										>
+											Control Panel
+										</DelayLink>
+									</li>
+								:
+									""
 
 						}
 						<li>

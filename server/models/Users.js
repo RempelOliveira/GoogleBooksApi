@@ -141,6 +141,14 @@ const Users = mongoose.model("Users", new mongoose.Schema
 
 	},
 
+	type:
+	{
+		type   : String,
+		enum   : [ "user", "admin" ],
+		default: "user"
+
+	},
+
 	datetime:
 	{
 		type   : Date,
