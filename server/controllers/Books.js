@@ -206,7 +206,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "1m" })
 
 									}
 
@@ -267,7 +267,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "1m" })
 
 									}
 
@@ -328,7 +328,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "1m" })
 
 									}
 
@@ -389,7 +389,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "1m" })
 
 									}
 
@@ -527,7 +527,7 @@ module.exports =
 
 											user: {
 
-												token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+												token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "1m" })
 
 											}
 

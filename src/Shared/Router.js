@@ -26,7 +26,7 @@ function Router()
 	const PrivateRoute = ({ component: Component, ...rest }) =>
 	(
 		<Route {...rest} render={props =>
-			(rest.admin ? isAdmin() : isAuth()) ? <Component {...props} /> : <Redirect to="/" />
+			(rest.admin ? isAdmin() : isAuth()) ? <Component {...props} /> : <Redirect to="/sign-in" />
 
 		} />
 

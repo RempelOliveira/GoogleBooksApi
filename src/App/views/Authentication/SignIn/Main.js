@@ -41,7 +41,7 @@ function Main({ history, loading, lastPage })
 
 		remember:
 		{
-			value: false
+			value: true
 
 		},
 
@@ -75,7 +75,7 @@ function Main({ history, loading, lastPage })
 		setForm({
 			...form, [event.target.name]: Object.assign({}, form[event.target.name],
 			{
-				value: event.target.name == "remember" ? !form.remember.value : event.target.value
+				value: event.target.name === "remember" ? !form.remember.value : event.target.value
 
 			})
 
@@ -364,8 +364,8 @@ function Main({ history, loading, lastPage })
 							<div className="field keep-signedin">
 								<FormControlLabel
 									name		   = "remember"
-									value		   = { form.email.remember }
-									control		   = { <Switch color="primary" size={ width < 320 ? "small" : "medium" } onChange={ handleChangeForm } /> }
+									value		   = { form.remember.value }
+									control		   = { <Switch color="primary" size={ width < 320 ? "small" : "medium" } checked={ form.remember.value } onChange={ handleChangeForm } /> }
 									label		   = "Keep me Signed in"
 									labelPlacement = "end"
 

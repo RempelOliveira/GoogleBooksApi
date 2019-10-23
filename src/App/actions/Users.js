@@ -30,7 +30,7 @@ export function SignUp(user)
 
 				if(!data.error)
 				{
-					data = setAuthUser(data.token);
+					data = setAuthUser(data.token, true);
 
 					dispatch({
 						type: SIGNUP_USER, payload: data
@@ -70,7 +70,7 @@ export function SignIn(user)
 
 				if(!data.error)
 				{
-					data = setAuthUser(data.token);
+					data = setAuthUser(data.token, user.remember);
 
 					dispatch({
 						type: SIGNIN_USER, payload: data

@@ -6,7 +6,8 @@ const TOKEN_SECRET = "@jwtSecret";
 
 function isAuth()
 {
-	return sessionStorage.getItem(TOKEN_KEY) !== null;
+	return (localStorage.getItem(TOKEN_KEY + "_remember") === "true"
+		? localStorage.getItem(TOKEN_KEY) : sessionStorage.getItem(TOKEN_KEY)) !== null;
 
 };
 
@@ -16,8 +17,11 @@ function isAdmin()
 
 };
 
-function setAuthUser(token)
+function setAuthUser(token, remember)
 {
+	remember =
+		remember === true || localStorage.getItem(TOKEN_KEY + "_remember") === "true";
+
 	if(token)
 	{
 		try
@@ -25,7 +29,14 @@ function setAuthUser(token)
 			const { user } =
 				jwt.verify(token, TOKEN_SECRET);
 
-			sessionStorage.setItem(TOKEN_KEY, token);
+			if(remember === true)
+			{
+				localStorage.setItem(TOKEN_KEY, token);
+				localStorage.setItem(TOKEN_KEY + "_remember", "true");
+
+			}
+			else
+				sessionStorage.setItem(TOKEN_KEY, token);
 
 			return { id: user.id, type: user.type, name: user.name, email: user.email, score: user.score };
 
@@ -34,7 +45,17 @@ function setAuthUser(token)
 
 	}
 	else
-		sessionStorage.removeItem(TOKEN_KEY);
+	{
+		if(remember)
+		{
+			localStorage.removeItem(TOKEN_KEY);
+			localStorage.removeItem(TOKEN_KEY + "_remember");
+
+		}
+		else
+			sessionStorage.removeItem(TOKEN_KEY);
+
+	}
 
 	return;
 
@@ -42,7 +63,8 @@ function setAuthUser(token)
 
 function getAuthUser(getToken = false)
 {
-	const token = sessionStorage.getItem(TOKEN_KEY);
+	const token =
+		localStorage.getItem(TOKEN_KEY + "_remember") === "true" ? localStorage.getItem(TOKEN_KEY) : sessionStorage.getItem(TOKEN_KEY)
 
 	if(token)
 	{
@@ -56,7 +78,11 @@ function getAuthUser(getToken = false)
 				return { id: user.id, type: user.type, name: user.name, email: user.email, score: user.score };
 
 			}
-			catch (err){ return; }
+			catch (err)
+			{
+				return setAuthUser();
+
+			}
 
 		}
 		else

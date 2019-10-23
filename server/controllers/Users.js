@@ -48,7 +48,7 @@ module.exports =
 				({
 					template: "SignUp", message: { to: user.email, subject: "Google Books Api - Sign Up" }, locals: { name: user.name, link: "http://localhost:3001/#browse" }});
 
-				res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+				res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "1m" }) });
 
 			})
 			.catch(error =>
@@ -98,7 +98,7 @@ module.exports =
 
 					};
 
-					res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+					res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "1m" }) });
 
 				}
 				else
@@ -152,7 +152,7 @@ module.exports =
 
 						};
 
-						res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+						res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "1m" }) });
 
 					})
 					.catch(error =>
@@ -284,7 +284,7 @@ module.exports =
 
 								};
 
-								res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+								res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "1m" }) });
 
 							})
 							.catch(error =>
