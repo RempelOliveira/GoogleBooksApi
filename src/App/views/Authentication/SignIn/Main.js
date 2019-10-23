@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 
@@ -12,6 +12,10 @@ import SnackBar from "../../Components/SnackBar";
 import { SignIn, RecoverPassword } from "../../../actions/Users";
 
 import formValidate from "../../../utils/FormValidate";
+
+
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
 
 function Main({ history, loading, lastPage })
 {
@@ -35,9 +39,18 @@ function Main({ history, loading, lastPage })
 
 		},
 
+		remember:
+		{
+			value: false
+
+		},
+
 		errors: {}
 
 	});
+
+	const [width, setWidth] =
+		useState(window.innerWidth);
 
 	const [showPassword, setShowPassword] =
 		useState(false);
@@ -48,12 +61,21 @@ function Main({ history, loading, lastPage })
 	const dispatch =
 		useDispatch();
 
+	const handleResize = () =>
+	{
+		setWidth(
+			window.innerWidth
+
+		);
+
+	};
+
 	const handleChangeForm = (event) =>
 	{
 		setForm({
 			...form, [event.target.name]: Object.assign({}, form[event.target.name],
 			{
-				value: event.target.value
+				value: event.target.name == "remember" ? !form.remember.value : event.target.value
 
 			})
 
@@ -88,7 +110,8 @@ function Main({ history, loading, lastPage })
 			let data =
 			{
 				email	: form.email.value,
-				password: form.password.value
+				password: form.password.value,
+				remember: form.remember.value
 
 			};
 
@@ -250,6 +273,18 @@ function Main({ history, loading, lastPage })
 
 	}
 
+	useEffect(() =>
+	{
+		window.addEventListener("resize", handleResize);
+
+		return (() =>
+		{
+			window.removeEventListener("resize", handleResize);
+
+		});
+
+	}, []);
+
 	return (
 		<main className="full-width">
 			<section id="sign-in">
@@ -325,6 +360,16 @@ function Main({ history, loading, lastPage })
 								>
 									Forgot Password?
 								</button>
+							</div>
+							<div className="field keep-signedin">
+								<FormControlLabel
+									name		   = "remember"
+									value		   = { form.email.remember }
+									control		   = { <Switch color="primary" size={ width < 320 ? "small" : "medium" } onChange={ handleChangeForm } /> }
+									label		   = "Keep me Signed in"
+									labelPlacement = "end"
+
+								/>
 							</div>
 							<div className="field">
 								<LaddaButton

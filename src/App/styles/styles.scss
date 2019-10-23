@@ -1510,7 +1510,7 @@ main
 
 				& .forgot-password
 				{
-					margin	  : -35px 0 21px 0;
+					margin	  : -35px 0 0 0;
 					text-align: right;
 
 					& button
@@ -1522,6 +1522,38 @@ main
 						padding	  : 0;
 						background: none;
 						text-align: right;
+
+					}
+
+				}
+
+				& .keep-signedin
+				{
+					margin	  : -8px 0 16px 0;
+					text-align: center;
+
+					& .MuiFormControlLabel-root
+					{
+						margin-right: 0;
+
+					}
+
+					& .MuiFormControlLabel-label
+					{
+						font : normal 11px AvenirMedium;
+						color: #000000;
+
+					}
+
+					& .MuiSwitch-colorPrimary.Mui-checked
+					{
+						color: #039be5;
+
+					}
+
+					& .MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track
+					{
+						background-color: #039be5;
 
 					}
 

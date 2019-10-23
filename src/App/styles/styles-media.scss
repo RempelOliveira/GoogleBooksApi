@@ -845,11 +845,24 @@
 
 					& .forgot-password
 					{
-						margin: -35px 0 21px 0;
+						margin: -35px 0 0 0;
 
 						& button
 						{
 							font: normal 11px AvenirHeavy;
+
+						}
+
+					}
+
+					& .keep-signedin
+					{
+						margin: -15px 0 10px 0;
+
+						& .MuiFormControlLabel-label
+						{
+							font	  : normal 13px AvenirMedium;
+							margin-top: 2px;
 
 						}
 
@@ -1682,13 +1695,19 @@
 
 					& .forgot-password
 					{
-						margin: -59px 0 45px 0;
+						margin: -59px 0 0 0;
 
 						& button
 						{
 							font: normal 12px AvenirHeavy;
 
 						}
+
+					}
+
+					& .keep-signedin
+					{
+						margin: 9px 0 34px 0;
 
 					}
 
