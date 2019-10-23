@@ -103,10 +103,15 @@
 
 					& li
 					{
-						& a,
-						& p
+						& a
 						{
 							margin: 0 24px;
+
+						}
+
+						& p
+						{
+							margin: 0 24px -4px 24px;
 
 						}
 
@@ -612,8 +617,9 @@
 						
 						& p
 						{
-							font   : normal 16px AvenirHeavy;
-							padding: 15px 0 12px 0;
+							font   		 : normal 16px AvenirHeavy;
+							padding		 : 15px 0 0 0;
+							margin-bottom: -4px;
 						
 						}
 
@@ -636,7 +642,7 @@
 								& a
 								{
 									font   : normal 14px AvenirMedium;
-									padding: 15px 0 15px 0;
+									padding: 16px 0 15px 0;
 
 								}
 
@@ -644,7 +650,7 @@
 								{
 									& a
 									{
-										padding: 0 0 15px 0;
+										padding: 16px 0 15px 0;
 
 									}
 
@@ -1127,8 +1133,9 @@
 
 						& p
 						{
-							font   : normal 20px AvenirHeavy;
-							padding: 15px 0 14px 0;
+							font   		 : normal 20px AvenirHeavy;
+							padding		 : 15px 0 0 0;
+							margin-bottom: -5px;
 
 						}
 
@@ -1172,7 +1179,7 @@
 								{
 									& a
 									{
-										padding	  : 0 0 20px 0;
+										padding	  : 19px 0 20px 0;
 										border-top: none;
 
 									}

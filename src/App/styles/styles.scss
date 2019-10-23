@@ -544,8 +544,8 @@ input::-ms-reveal
 					{
 						font   : normal 14px AvenirHeavy;
 						color  : #292929;
-						margin : 0 12px;
-						padding: 11px 0 8px 0;
+						margin : 0 12px -4px 12px;
+						padding: 11px 0 0 0;
 						display: block;
 
 					}
@@ -613,7 +613,7 @@ input::-ms-reveal
 							{
 								& a
 								{
-									padding	  : 0 0 11px 0;
+									padding	  : 12px 0 11px 0;
 									border-top: none;
 
 								}
