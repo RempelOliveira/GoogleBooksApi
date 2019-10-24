@@ -368,6 +368,7 @@ function Main({ history, loading, lastPage })
 									control		   = { <Switch color="primary" size={ width < 320 ? "small" : "medium" } checked={ form.remember.value } onChange={ handleChangeForm } /> }
 									label		   = "Keep me Signed in"
 									labelPlacement = "end"
+									disabled	   = { loading.isLoading }
 
 								/>
 							</div>

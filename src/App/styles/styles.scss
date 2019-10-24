@@ -195,6 +195,60 @@ input::-ms-reveal
 }
 
 /*
+ * Switcher
+ */
+
+.MuiFormControlLabel-root
+{
+	& .MuiFormControlLabel-label
+	{
+		font : normal 11px AvenirMedium;
+		color: #000000;
+
+	}
+
+	& .MuiSwitch-switchBase
+	{
+		color: #fafafa;
+
+		&.Mui-disabled
+		{
+			& + .MuiSwitch-track
+			{
+				opacity: .38;
+
+			}
+
+		}
+
+	}
+
+	& .MuiSwitch-colorPrimary
+	{
+		&.Mui-disabled
+		{
+			color: #fafafa;
+
+		}
+
+		&.Mui-checked
+		{
+			color: #039be5;
+
+			& + .MuiSwitch-track
+			{
+				opacity			: .5;
+				background-color: #039be5;
+
+			}
+
+		}
+
+	}
+
+}
+
+/*
  * Page Not Found
  */
 
@@ -1531,31 +1585,6 @@ main
 				{
 					margin	  : -8px 0 16px 0;
 					text-align: center;
-
-					& .MuiFormControlLabel-root
-					{
-						margin-right: 0;
-
-					}
-
-					& .MuiFormControlLabel-label
-					{
-						font : normal 11px AvenirMedium;
-						color: #000000;
-
-					}
-
-					& .MuiSwitch-colorPrimary.Mui-checked
-					{
-						color: #039be5;
-
-					}
-
-					& .MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track
-					{
-						background-color: #039be5;
-
-					}
 
 				}
 
