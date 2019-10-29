@@ -509,6 +509,21 @@
 
 			}
 
+			&#control-panel-list
+			{
+				& .new-book
+				{
+					& a
+					{
+						font   : normal 12px AvenirHeavy;
+						padding: 12px 14px 11px 14px;
+
+					}
+
+				}
+
+			}
+
 		}
 
 	}
@@ -1753,6 +1768,21 @@
 
 			}
 
+			&#control-panel-list
+			{
+				& .new-book
+				{
+					& a
+					{
+						font   : normal 13px AvenirHeavy;
+						padding: 14px 18px;
+
+					}
+
+				}
+
+			}
+
 		}
 
 	}
@@ -1850,24 +1880,6 @@
 
 			}
 
-			& table
-			{
-				& tr
-				{
-					& td
-					{
-						& .title-subtitle
-						{
-							max-width: 226px;
-
-						}
-
-					}
-
-				}
-
-			}
-
 		}
 
 	}
@@ -1946,6 +1958,29 @@
 
 			}
 
+			&#control-panel-list
+			{
+				& .metrics
+				{
+					& .columns
+					{
+						& .column
+						{
+							& .metric
+							{
+								width : 138px;
+								height: 76px;
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
 		}
 
 	}
@@ -1965,6 +2000,36 @@
 					& .title
 					{
 						max-width: 688px;
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	main
+	{
+		& section
+		{
+			&#control-panel-list
+			{
+				& table
+				{
+					& tr
+					{
+						& td
+						{
+							& .title-subtitle
+							{
+								max-width: 290px;
+
+							}
+
+						}
 
 					}
 

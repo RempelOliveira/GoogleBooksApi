@@ -216,6 +216,18 @@ function Main({ category })
 																</div>
 															</div>
 														</div>
+
+														<div className="new-book">
+															<a
+																href   = ""
+																target = "_self"
+																rel	   = "noopener noreferrer"
+
+															>
+																NEW BOOK
+															</a>
+														</div>
+
 														<table>
 															<tbody>
 																{
