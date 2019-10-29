@@ -4,13 +4,13 @@ import { withRouter } from "react-router-dom";
 
 import shortid from "shortid";
 
-import { Create } from "../../../actions/Reviews";
+import { Create } from "../../../../Shared/actions/Reviews";
 
 import Review from "../../Components/Review";
-import CircularProgressLoader from "../../Components/CircularProgressLoader";
-import BadRequest from "../../400.js";
+import CircularProgressLoader from "../../../../Shared/views/Components/CircularProgressLoader";
+import BadRequest from "../../../../Shared/views/400.js";
 
-import formValidate from "../../../utils/FormValidate";
+import formValidate from "../../../../Shared/utils/FormValidate";
 
 import "ladda/dist/ladda.min.css";
 import LaddaButton, { ZOOM_OUT } from "react-ladda";

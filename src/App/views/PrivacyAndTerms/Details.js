@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import Main from "./Details/Main";
 import Header from "./Details/Header";
-import Head from "../Components/Head";
+import Head from "../../../Shared/views/Components/Head";
 
 function Details()
 {

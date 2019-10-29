@@ -2,9 +2,9 @@ import React, { Fragment, useState } from "react";
 
 import Main from "./List/Main";
 import Header from "./List/Header";
-import DrawerMenu from "../Components/DrawerMenu";
-import Head from "../Components/Head";
-import PageNotFound from "../404.js";
+import DrawerMenu from "../../../Shared/views/Components/DrawerMenu";
+import Head from "../../../Shared/views/Components/Head";
+import PageNotFound from "../../../Shared/views/404.js";
 
 function List({ history })
 {

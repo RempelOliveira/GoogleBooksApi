@@ -2,7 +2,7 @@ import React, { useState }  from "react";
 
 import Main from "./SignIn/Main";
 import Header from "./SignIn/Header";
-import Head from "../Components/Head";
+import Head from "../../../Shared/views/Components/Head";
 
 function SignIn()
 {

@@ -5,8 +5,8 @@ import shortid from "shortid";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Update } from "../../../actions/Books";
-import SnackBar from "../../Components/SnackBar";
+import { Update } from "../../../../Shared/actions/Books";
+import SnackBar from "../../../../Shared/views/Components/SnackBar";
 
 function Header({ history, book })
 {

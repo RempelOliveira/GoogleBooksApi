@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 import shortid from "shortid";
 
@@ -11,9 +12,12 @@ import { SignOut } from "../../actions/Users";
 import SnackBar from "./SnackBar";
 import DelayLink from "./DelayLink";
 
-function DrawerMenu()
+function DrawerMenu({ history })
 {
 	let timeOut;
+
+	const hash =
+		history.location.hash;
 
 	const [active, setActive] =
 		useState(false);
@@ -153,6 +157,23 @@ function DrawerMenu()
 				<nav>
 					<ul>
 						{
+							user && user.type === "admin"
+								?
+									<li>
+										<DelayLink
+											to 		= { "/" + ["#browse", "#favorites"].indexOf(hash) !== -1 ? hash : "" }
+											onClick	= { handleActive }
+
+										>
+											Books
+										</DelayLink>
+									</li>
+
+								:
+									""
+
+						}
+						{
 							!user ||
 								<li>
 									<DelayLink
@@ -181,11 +202,20 @@ function DrawerMenu()
 											</li>
 											<li>
 												<DelayLink
-													to 		= "/control-panel/users"
+													to 		= "/control-panel/categories"
 													onClick	= { handleActive }
 
 												>
-													Users
+													Categories
+												</DelayLink>
+											</li>
+											<li>
+												<DelayLink
+													to 		= "/control-panel/user-acconts"
+													onClick	= { handleActive }
+
+												>
+													User Accounts
 												</DelayLink>
 											</li>
 										</ul>
@@ -253,4 +283,4 @@ function DrawerMenu()
 
 }
 
-export default DrawerMenu;
+export default withRouter(DrawerMenu);

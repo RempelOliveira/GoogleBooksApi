@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { UPDATE_USER, SIGNOUT_USER } from "../actions/Users";
+import { UPDATE_USER, SIGNOUT_USER } from "./Users";
 import { setAuthUser, getAuthUser } from "../utils/UserAuthentication.js";
 
 const api = "http://" + window.location.hostname + ":3002/api/books";

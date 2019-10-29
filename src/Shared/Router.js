@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import "../App/styles/styles.css";
-import "../App/styles/styles-media.css";
+import "../Shared/styles/styles.css";
+import "../Shared/styles/styles-media.css";
 
-import { isAuth, isAdmin } from "../App/utils/UserAuthentication";
+import { isAuth, isAdmin } from "../Shared/utils/UserAuthentication";
 
 import BooksList from "../App/views/Books/List";
 import BooksDetails from "../App/views/Books/Details";
@@ -17,7 +17,7 @@ import SignUp from "../App/views/Authentication/SignUp";
 
 import Account from "../App/views/Account/Details";
 import RecoverPassword from "../App/views/Account/RecoverPassword";
-import PageNotFound from "../App/views/404.js";
+import PageNotFound from "../Shared/views/404.js";
 
 import DashboardBooksList from "../Dashboard/views/Books/List";
 
@@ -50,7 +50,7 @@ function Router()
 
 				<PrivateRoute exact path="/account" component={ Account } />
 
-				<PrivateRoute path="/control-panel/books" component={ DashboardBooksList } admin={ true } />
+				<PrivateRoute exact path="/control-panel/books" component={ DashboardBooksList } admin={ true } />
 
 				<Route
 					component={ PageNotFound }

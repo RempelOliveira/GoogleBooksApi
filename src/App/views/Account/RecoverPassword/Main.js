@@ -6,11 +6,11 @@ import shortid from "shortid";
 
 import "ladda/dist/ladda.min.css";
 import LaddaButton, { ZOOM_OUT } from "react-ladda";
-import SnackBar from "../../Components/SnackBar";
+import SnackBar from "../../../../Shared/views/Components/SnackBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import formValidate from "../../../utils/FormValidate";
-import { RecoverPasswordUpdate } from "../../../actions/Users";
+import formValidate from "../../../../Shared/utils/FormValidate";
+import { RecoverPasswordUpdate } from "../../../../Shared/actions/Users";
 
 function Main({ history, email, loading, lastPage })
 {

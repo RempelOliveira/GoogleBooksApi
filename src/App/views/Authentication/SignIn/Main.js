@@ -8,10 +8,10 @@ import "ladda/dist/ladda.min.css";
 import LaddaButton, { ZOOM_OUT } from "react-ladda";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import SnackBar from "../../Components/SnackBar";
-import { SignIn, RecoverPassword } from "../../../actions/Users";
+import SnackBar from "../../../../Shared/views/Components/SnackBar";
+import { SignIn, RecoverPassword } from "../../../../Shared/actions/Users";
 
-import formValidate from "../../../utils/FormValidate";
+import formValidate from "../../../../Shared/utils/FormValidate";
 
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";

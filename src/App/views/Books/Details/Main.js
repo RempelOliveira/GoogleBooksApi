@@ -5,9 +5,9 @@ import shortid from "shortid";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Update } from "../../../actions/Books";
+import { Update } from "../../../../Shared/actions/Books";
 import Book from "../../Components/Book";
-import SnackBar from "../../Components/SnackBar";
+import SnackBar from "../../../../Shared/views/Components/SnackBar";
 
 function Main({ history, book, onClickShare })
 {

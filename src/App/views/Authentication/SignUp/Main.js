@@ -9,10 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "ladda/dist/ladda.min.css";
 import LaddaButton, { ZOOM_OUT } from "react-ladda";
 
-import SnackBar from "../../Components/SnackBar";
-import { SignUp } from "../../../actions/Users";
+import SnackBar from "../../../../Shared/views/Components/SnackBar";
+import { SignUp } from "../../../../Shared/actions/Users";
 
-import formValidate from "../../../utils/FormValidate";
+import formValidate from "../../../../Shared/utils/FormValidate";
 
 function Main({ history, loading, lastPage })
 {

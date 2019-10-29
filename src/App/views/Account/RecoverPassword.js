@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Main from "./RecoverPassword/Main";
 import Header from "./RecoverPassword/Header";
-import Head from "../Components/Head";
+import Head from "../../../Shared/views/Components/Head";
 
 function RecoverPassword(props)
 {

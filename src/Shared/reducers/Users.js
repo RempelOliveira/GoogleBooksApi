@@ -1,5 +1,5 @@
 import { getAuthUser } from "../utils/UserAuthentication";
-import { SIGNUP_USER, SIGNIN_USER, SIGNOUT_USER, UPDATE_USER, RECOVER_PASSWORD, RECOVER_PASSWORD_UPDATE } from "../actions/Users";
+import { SIGNUP_USER, SIGNIN_USER, SIGNOUT_USER, UPDATE_USER, RECOVER_PASSWORD, RECOVER_PASSWORD_UPDATE } from "../../Shared/actions/Users";
 
 function Users(state = { data: getAuthUser() }, action)
 {

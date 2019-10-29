@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useCallback }  from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { withRouter } from "react-router-dom";
 
 import shortid from "shortid";
 import IndianaDragScroll from "react-indiana-drag-scroll";
 
 import { List as Categories } from "../../../../Shared/actions/Categories";
 
-function Header({ history, tab, category, onChangeTab, onChangeCategory })
+function Header({ category, onChangeCategory })
 {
 	const [width, setWidth] =
 		useState(window.innerWidth);
@@ -42,14 +41,12 @@ function Header({ history, tab, category, onChangeTab, onChangeCategory })
 
 	useEffect(() =>
 	{
-		history.replace("/#" + tab);
-
 		dispatch(
 			Categories(category)
 
 		);
 
-	}, [history, category, dispatch, tab]);
+	}, [category, dispatch]);
 
 	useEffect(() =>
 	{
@@ -71,22 +68,13 @@ function Header({ history, tab, category, onChangeTab, onChangeCategory })
 		<header id="header" className={ sticky ? "sticky" : "" }>
 			<nav>
 				<ul>
-					<li className={ tab === "browse" ? "active" : "" }>
+					<li className={ "active" }>
 						<button
 							type    = "button"
-							onClick = { () => onChangeTab("browse") }
+							onClick = { () => {} }
 
 						>
-							Browse
-						</button>
-					</li>
-					<li className={ tab === "favorites" ? "active" : "" }>
-						<button
-							type    = "button"
-							onClick = { () => onChangeTab("favorites") }
-
-						>
-							Favorites
+							Books
 						</button>
 					</li>
 				</ul>
@@ -128,4 +116,4 @@ function Header({ history, tab, category, onChangeTab, onChangeCategory })
 
 }
 
-export default withRouter(Header);
+export default Header;

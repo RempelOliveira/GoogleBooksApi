@@ -1,18 +1,19 @@
 import React, { Fragment, useState, useEffect, useCallback, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 import shortid from "shortid";
 
 import CircularProgressLoader from "../../../../Shared/views/Components/CircularProgressLoader";
-import Book from "../../Components/Book";
 import SnackBar from "../../../../Shared/views/Components/SnackBar";
+
+import Book from "../../Components/Book";
+import Metric from "../../Components/Metric";
 
 import BadRequest from "../../../../Shared/views/400.js";
 
 import { List } from "../../../../Shared/actions/Books";
 
-function Main({ tab, category })
+function Main({ category })
 {
 	const isFirstRun =
 		useRef(true);
@@ -38,9 +39,6 @@ function Main({ tab, category })
 	const books =
 		useSelector(state => state.Books.data);
 
-	const user =
-		useSelector(state => state.Users.data);
-
 	const handleList = useCallback((delayed = true, skip) =>
 	{
 		if(skip)
@@ -57,7 +55,7 @@ function Main({ tab, category })
 
 		setTimeout(() =>
 		{
-			dispatch(List(tab, category, skip)).then(data =>
+			dispatch(List("browse", category, skip)).then(data =>
 			{
 				if(data)
 				{
@@ -101,7 +99,7 @@ function Main({ tab, category })
 
 		}, delayed ? 500 : 0);
 
-	}, [dispatch, tab, category]);
+	}, [dispatch, category]);
 
 	const handleScroll = useCallback(() =>
 	{
@@ -120,18 +118,14 @@ function Main({ tab, category })
 
 	useEffect(() =>
 	{
-		if(tab === "browse" || tab === "favorites")
-		{
-			setSkip(0);
+		setSkip(0);
 
-			handleList(
-				!isFirstRun.current
+		handleList(
+			!isFirstRun.current
 
-			);
+		);
 
-		}
-
-	}, [handleList, tab]);
+	}, [handleList]);
 
 	useEffect(() =>
 	{
@@ -170,8 +164,8 @@ function Main({ tab, category })
 						/>
 
 					:
-						<main>
-							<section id="list">
+						<main className="control-panel">
+							<section id="control-panel-list">
 								{
 									internalError
 										?
@@ -186,52 +180,71 @@ function Main({ tab, category })
 												?
 													<div className="no-records-found">
 														<h1>No records found!</h1>
-														{
-															tab === "favorites" && !user
-																?
-																	<p>Sign in app to see your favorites</p>
-																:
-																	""
-
-														}
 													</div>
 
 												:
 													<Fragment>
-														<div className="columns is-multiline">
-															{
-																books.books.map((item) =>
-																{
-																	return (
-																		<div
-																			key 	  = { shortid.generate() }
-																			className = "column is-narrow"
+														<div className="metrics">
+															<div className="columns is-multiline">
+																<div className="column is-narrow">
+																	<Metric
+																		name  = { books.total === 1 ? "Book" : "Books"}
+																		value = { books.total }
 
-																		>
-																			<Link
-																				to 		  = { "/book/" + item.id }
-																				className = "book-link"
+																	/>
+																</div>
+																<div className="column is-narrow">
+																	<Metric
+																		name  = "Reviews"
+																		value = "22"
 
-																			>
-																				<Book
-																					title 	    = { item.title }
-																					subtitle    = { item.subtitle }
-																					thumbnail   = { item.thumbnail }
-																					reviews	    = { item.reviews }
-																					rating	    = 
-																					{{
-																						stars: item.rating.stars, total: item.rating.total, users: item.rating.users }}
+																	/>
+																</div>
+																<div className="column is-narrow">
+																	<Metric
+																		name  = "Likes"
+																		value = "143"
 
-																				/>
-																			</Link>
-																		</div>
+																	/>
+																</div>
+																<div className="column is-narrow">
+																	<Metric
+																		name  = "Favorites"
+																		value = "78"
 
-																	);
-
-																})
-																
-															}
+																	/>
+																</div>
+															</div>
 														</div>
+														<table>
+															<tbody>
+																{
+																	books.books.map((item) =>
+																	{
+																		return (
+																			<Book
+																				id			= { item.id }
+																				key 	    = { shortid.generate() }
+																				title 	    = { item.title }
+																				subtitle    = { item.subtitle }
+																				thumbnail   = { item.thumbnail }
+																				reviews	    = { item.reviews }
+																				likes	    = "0"
+																				favorites   = "0"
+																				price    	= { item.price }
+																				rating	    = 
+																				{{
+																					stars: item.rating.stars, total: item.rating.total, users: item.rating.users }}
+
+																			/>
+
+																		);
+
+																	})
+
+																}
+															</tbody>
+														</table>
 														{
 															books.books.length < books.total
 																?

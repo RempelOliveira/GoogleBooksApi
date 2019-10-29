@@ -249,10 +249,10 @@ input::-ms-reveal
 }
 
 /*
- * Page Not Found
+ * Page Not Found | Min Resolution
  */
 
-#page-not-found
+#page-not-found, #min-resolution
 {
 	top			   : 0;
 	left		   : 0;
@@ -267,9 +267,10 @@ input::-ms-reveal
 
 	& h1
 	{
-		font  : normal 14px AvenirHeavy;
-		color : #000000;
-		margin: 16px auto;
+		font   : normal 14px AvenirHeavy;
+		color  : #000000;
+		margin : 16px auto;
+		padding: 0 12px;
 
 	}
 
@@ -314,9 +315,10 @@ input::-ms-reveal
 
 	& h1
 	{
-		font  : normal 14px AvenirHeavy;
-		color : #000000;
-		margin: 16px auto;
+		font   : normal 14px AvenirHeavy;
+		color  : #000000;
+		margin : 16px auto;
+		padding: 0 12px;
 
 	}
 
@@ -873,19 +875,24 @@ input::-ms-reveal
 
 	}
 
-	&.sticky menu
+	&.sticky 
 	{
-		top			 : 0;
-		width		 : 100%;
-		z-index		 : 2;
-		position	 : fixed;
-		border-bottom: 1px solid #eaeaea;
+		z-index: 3;
 
-	}
+		& menu
+		{
+			top			 : 0;
+			width		 : 100%;
+			position	 : fixed;
+			border-bottom: 1px solid #eaeaea;
 
-	&.sticky + main
-	{
-		padding-top: 46px;
+		}
+
+		& + main
+		{
+			padding-top: 46px;
+
+		}
 
 	}
 
@@ -1135,17 +1142,17 @@ main
 						{
 							border-radius: 6px 6px 0 6px;
 
-						}
+							& div
+							{
+								width	  : 26px;
+								right	  : 0;
+								height	  : 26px;
+								bottom	  : 0;
+								position  : absolute;
+								background: linear-gradient(135deg, #ffffff, #f3f3f3 20%, #cccccc 38%, #bbbbbb 44%, #aaaaaa 50%, rgba(0, 0, 0, .5) 10%, #ffffff 50%, #ffffff);
+								box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 
-						&.thumbnail-curl div
-						{
-							width	  : 26px;
-							right	  : 0;
-							height	  : 26px;
-							bottom	  : 0;
-							position  : absolute;
-							background: linear-gradient(135deg, #ffffff, #f3f3f3 20%, #cccccc 38%, #bbbbbb 44%, #aaaaaa 50%, rgba(0, 0, 0, .5) 10%, #ffffff 50%, #ffffff);
-							box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+							}
 
 						}
 
@@ -1168,6 +1175,258 @@ main
 
 					}
 					
+				}
+
+			}
+
+		}
+
+		
+		& .metrics
+		{
+			margin  : 0 0 32px 0;
+			z-index : 2;
+			position: relative;
+
+			& .columns
+			{
+				display		: flex!important;
+				margin-left : -.75rem;
+				margin-right: -.75rem;
+
+				& .column
+				{
+					flex-grow: unset;
+
+					& .metric
+					{
+						width			: 138px;
+						height		 	: 76px;
+						box-shadow	 	: 0 6px 12px rgba(0, 0, 0, .24);
+						border-radius	: 8px;
+						background-color: #ffffff;
+
+						& .value-name
+						{
+							height		   : 100%;
+							display		   : flex;
+							padding		   : 8px 12px;
+							box-sizing	   : border-box;
+							flex-direction : column;
+							justify-content: flex-end;
+
+							& .value
+							{
+								font : normal 20px AvenirHeavy;
+								color: #292929;
+
+							}
+
+							& .name
+							{
+								font : normal 14px AvenirLight;
+								color: #929292;
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		& table
+		{
+			width		  : 100%;
+			border-spacing: 0;
+
+			& tr:not(.is-selected):nth-child(odd)
+			{
+				background-color: #fcfcfc;
+
+			}
+
+			& tr
+			{
+				& td
+				{
+					border		  : none;
+					padding		  : 6px;
+					vertical-align: middle;
+
+					& .thumbnail
+					{
+						width		   	   : 60px;
+						height		   	   : 80px;
+						overflow		   : hidden;
+						position	   	   : relative;
+						border-radius      : 6px;
+						background-size	   : 100% 100%;
+						background-repeat  : no-repeat;
+						background-position: center center;
+
+						&.thumbnail-curl
+						{
+							border-radius: 6px 6px 0 6px;
+
+							& div
+							{
+								width	  : 14px;
+								right	  : 0;
+								height	  : 14px;
+								bottom	  : 0;
+								position  : absolute;
+								background: linear-gradient(135deg, #ffffff, #f3f3f3 20%, #cccccc 38%, #bbbbbb 44%, #aaaaaa 50%, rgba(0, 0, 0, .5) 10%, #ffffff 50%, #ffffff);
+								box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+
+							}
+
+						}
+
+					}
+
+					& .title-subtitle
+					{
+						max-width: 140px;
+
+						& .title
+						{
+							font		 : normal 14px AvenirHeavy;
+							color	 	 : #292929;
+							margin		 : 0 0 4px 0;
+							overflow	 : hidden;
+							white-space  : nowrap;
+							text-overflow: ellipsis;
+
+						}
+
+						& .subtitle
+						{
+							font   		 : normal 10px AvenirLight;
+							color  		 : #292929;
+							margin 		 : 4px 0 0 0;
+							display		 : -webkit-box;
+							overflow	 : hidden;
+							text-overflow: ellipsis;
+
+							-webkit-line-clamp: 4;
+							-webkit-box-orient: vertical;
+
+						}
+
+					}
+
+					& .rating
+					{
+						margin		   : 3px 0 0 0;
+						display		   : flex;
+						justify-content: left;
+
+						& span
+						{
+							font  : normal 10px AvenirLight;
+							color : #929292;
+							margin: 3px 0 0 12px;
+
+						}
+
+					}
+
+					& .price
+					{
+						font 	  : normal 12px AvenirHeavy;
+						color	  : #039be5;
+						text-align: left;
+
+					}
+
+					& .icon-text
+					{
+						display		   : flex;
+						justify-content: left;
+
+						& svg
+						{
+							color    : #039be5;
+							font-size: 16px;
+
+						}
+
+						& span
+						{
+							font  	: normal 10px AvenirLight;
+							color 	: #929292;
+							margin	: 2px 0 0 12px;
+
+						}
+
+						&:nth-child(2)
+						{
+							margin: 0 24px;
+
+						}
+
+					}
+
+					& .actions
+					{
+						margin: 0 12px 0 0;
+
+						& .edit
+						{
+							color	 : #adb5bd;
+							margin   : 0 8px 0 0;
+							font-size: 16px;
+
+						}
+
+						& .delete
+						{
+							color 	  : #adb5bd;
+							border	  : none;
+							margin    : 0 0 0 8px;
+							font-size : 16px;
+							background: none;
+
+						}
+
+					}
+
+					&:nth-child(1)
+					{
+						width		 : 60px;
+						border-radius: 6px 0 0 6px;
+
+					}
+
+					&:nth-child(3)
+					{
+						min-width  : 70px;
+						white-space: nowrap;
+
+					}
+
+					&:nth-child(4),
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7)
+					{
+						white-space: nowrap;
+
+					}
+
+					&:nth-child(8)
+					{
+						text-align	 : right;
+						white-space  : nowrap;
+						border-radius: 0 6px 6px 0;
+
+					}
+
 				}
 
 			}

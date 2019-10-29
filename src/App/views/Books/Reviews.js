@@ -6,10 +6,10 @@ import shortid from "shortid";
 import Main from "./Reviews/Main";
 import Header from "./Reviews/Header";
 
-import SnackBar from "../Components/SnackBar";
-import Head from "../Components/Head";
+import SnackBar from "../../../Shared/views/Components/SnackBar";
+import Head from "../../../Shared/views/Components/Head";
 
-import { List } from "../../actions/Reviews";
+import { List } from "../../../Shared/actions/Reviews";
 
 function Reviews(props)
 {

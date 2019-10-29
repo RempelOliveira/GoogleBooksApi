@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
 import shortid from "shortid";
 
-import { Read } from "../../actions/Books";
-import CircularProgressLoader from "../Components/CircularProgressLoader";
+import { Read } from "../../../Shared/actions/Books";
+import CircularProgressLoader from "../../../Shared/views/Components/CircularProgressLoader";
 
 import Main from "./Details/Main";
 import Header from "./Details/Header";
@@ -12,11 +12,11 @@ import Footer from "./Details/Footer";
 
 import Share from "./Details/Share";
 
-import PageNotFound from "../404.js";
-import BadRequest from "../400.js";
+import PageNotFound from "../../../Shared/views/404.js";
+import BadRequest from "../../../Shared/views/400.js";
 
-import SnackBar from "../Components/SnackBar";
-import Head from "../Components/Head";
+import SnackBar from "../../../Shared/views/Components/SnackBar";
+import Head from "../../../Shared/views/Components/Head";
 
 function Details(props)
 {
