@@ -184,7 +184,7 @@
 
 		&.opened
 		{
-			& + .app
+			& ~ .app
 			{
 				& nav
 				{
@@ -254,7 +254,7 @@
 
 		&.sticky
 		{
-			& + main
+			& ~ main
 			{
 				padding-top: 70px;
 
@@ -511,9 +511,25 @@
 
 			&#control-panel-list
 			{
-				& .new-book
+				& .no-records-found
 				{
-					& a
+					& h1
+					{
+						font: normal 16px AvenirHeavy;
+
+					}
+
+					& p
+					{
+						font: normal 12px AvenirLight;
+
+					}
+
+				}
+
+				& .actions
+				{
+					& button
 					{
 						font   : normal 12px AvenirHeavy;
 						padding: 12px 14px 11px 14px;
@@ -700,7 +716,7 @@
 
 		&.opened
 		{
-			& + .app
+			& ~ .app
 			{
 				& nav
 				{
@@ -763,7 +779,7 @@
 
 		&.sticky
 		{
-			& + main
+			& ~ main
 			{
 				padding-top: 73px;
 
@@ -935,7 +951,7 @@
 
 		&.opened
 		{
-			& + .app
+			& ~ .app
 			{
 				transform: translateX(340px);
 
@@ -1242,7 +1258,7 @@
 
 		&.opened
 		{
-			& + .app
+			& ~ .app
 			{
 				& nav
 				{
@@ -1278,7 +1294,7 @@
 
 		&.sticky
 		{
-			& + main
+			& ~ main
 			{
 				padding-top: 89px;
 
@@ -1770,9 +1786,25 @@
 
 			&#control-panel-list
 			{
-				& .new-book
+				& .no-records-found
 				{
-					& a
+					& h1
+					{
+						font: normal 18px AvenirHeavy;
+
+					}
+
+					& p
+					{
+						font: normal 13px AvenirLight;
+
+					}
+
+				}
+
+				& .actions
+				{
+					& button
 					{
 						font   : normal 13px AvenirHeavy;
 						padding: 14px 18px;
@@ -1958,29 +1990,6 @@
 
 			}
 
-			&#control-panel-list
-			{
-				& .metrics
-				{
-					& .columns
-					{
-						& .column
-						{
-							& .metric
-							{
-								width : 138px;
-								height: 76px;
-
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
 		}
 
 	}
@@ -2017,6 +2026,25 @@
 		{
 			&#control-panel-list
 			{
+				& .metrics
+				{
+					& .columns
+					{
+						& .column
+						{
+							& .metric
+							{
+								width : 138px;
+								height: 76px;
+
+							}
+
+						}
+
+					}
+
+				}
+
 				& table
 				{
 					& tr

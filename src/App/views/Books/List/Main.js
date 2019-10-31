@@ -105,7 +105,7 @@ function Main({ tab, category })
 
 	const handleScroll = useCallback(() =>
 	{
-		if(books)
+		if(books && books.books)
 		{
 			if(books.books.length < books.total && !isLoadingMore)
 			{
@@ -182,21 +182,8 @@ function Main({ tab, category })
 											/>
 
 										:
-											books.books.length === 0
+											books.books && books.books.length
 												?
-													<div className="no-records-found">
-														<h1>No records found!</h1>
-														{
-															tab === "favorites" && !user
-																?
-																	<p>Sign in app to see your favorites</p>
-																:
-																	""
-
-														}
-													</div>
-
-												:
 													<Fragment>
 														<div className="columns is-multiline">
 															{
@@ -245,7 +232,20 @@ function Main({ tab, category })
 
 														}
 													</Fragment>
-									
+
+												:
+													<div className="no-records-found">
+														<h1>No records found!</h1>
+														{
+															tab === "favorites" && !user
+																?
+																	<p>Sign in app to see your favorites</p>
+																:
+																	""
+
+														}
+													</div>
+
 								}
 							</section>
 						</main>

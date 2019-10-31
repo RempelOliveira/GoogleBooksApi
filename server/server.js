@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const config =
 	require("./configs/keys.config.js");
 
-mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
 	.then(() =>
 	{
 		console.log("Database connected");

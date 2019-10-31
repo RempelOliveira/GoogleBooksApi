@@ -6,6 +6,7 @@ import Main from "./List/Main";
 import Header from "./List/Header";
 import DrawerMenu from "../../../Shared/views/Components/DrawerMenu";
 import Head from "../../../Shared/views/Components/Head";
+import ModalWindow from "../Components/ModalWindow";
 import MinResolution from "../MinResolution";
 
 function List({ history })
@@ -15,6 +16,9 @@ function List({ history })
 
 	const [category, setCategory] =
 		useState("typography");
+
+	const [modal, setModal] =
+		useState({ opened: false, content: "" });
 
 	const user =
 		useSelector(state => state.Users.data);
@@ -31,6 +35,15 @@ function List({ history })
 			window.innerWidth
 
 		);
+
+	};
+
+	const handleChangeModal = (content) =>
+	{
+		setModal({
+			opened: Boolean(content), content: content
+
+		});
 
 	};
 
@@ -69,6 +82,7 @@ function List({ history })
 
 					:
 						<Fragment>
+							<ModalWindow opened={ modal.opened } content={ modal.content } onChangeModal = { handleChangeModal } />
 							<DrawerMenu />
 							<div className="app">
 								<Header
@@ -77,7 +91,8 @@ function List({ history })
 
 								/>
 								<Main
-									category = { category }
+									category  	  = { category }
+									onChangeModal = { handleChangeModal }
 
 								/>
 							</div>

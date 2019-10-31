@@ -7,6 +7,9 @@ const Controller = require("../controllers/Books");
 Books.route("/")
 	.get(Controller.List);
 
+Books.route("/sync")
+	.get(Controller.Sync);
+
 Books.route("/:id")
 	.get(Controller.Read);
 

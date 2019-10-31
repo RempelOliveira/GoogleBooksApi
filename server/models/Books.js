@@ -8,6 +8,7 @@ const Books = mongoose.model("Books", new mongoose.Schema
 	id:
 	{
 		type    : String,
+		unique	: true,
 		required: [ true, "Required" ]
 
 	},

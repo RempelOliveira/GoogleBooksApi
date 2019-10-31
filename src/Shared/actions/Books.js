@@ -11,7 +11,7 @@ export const UPDATE = "UPDATE";
 
 let axiosCancel;
 
-export function List(tab, category, skip)
+export function List(tab, category, skip, sync, metrics)
 {
 	if(axiosCancel)
 		axiosCancel.cancel();
@@ -28,7 +28,10 @@ export function List(tab, category, skip)
 
 		};
 
-		return axios.get(api, { params: params, headers: { Authorization: getAuthUser(true) }, cancelToken: axiosCancel.token })
+		if(metrics)
+			params.metrics = true;
+
+		return axios.get(api + (sync ? "/sync" : ""), { params: params, headers: { Authorization: getAuthUser(true) }, cancelToken: axiosCancel.token })
 
 			.then(response =>
 			{

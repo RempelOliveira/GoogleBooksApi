@@ -79,13 +79,13 @@ function Book({ id, title, subtitle, price, rating, reviews, likes, favorites, t
 			<td>
 				<div className="icon-text">
 					<FontAwesomeIcon icon = {["fas", "heart"]} />
-					<span>0</span>
+					<span>{ likes > 9999 ? "+10k" : likes }</span>
 				</div>
 			</td>
 			<td>
 				<div className="icon-text">
 					<FontAwesomeIcon icon = {["fas", "bookmark"]} />
-					<span>0</span>
+					<span>{ favorites > 9999 ? "+10k" : favorites }</span>
 				</div>
 			</td>
 			<td>
