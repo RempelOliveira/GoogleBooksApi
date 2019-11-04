@@ -39,9 +39,9 @@ function Main({ category, onChangeModal })
 	const books =
 		useSelector(state => state.Books.data);
 
-	const handleList = useCallback((delayed = true, sync, skip) =>
+	const handleList = useCallback((delayed = true, sync, iskip) =>
 	{
-		if(skip)
+		if(iskip)
 		{
 			setIsLoadingMore(true);
 
@@ -55,7 +55,7 @@ function Main({ category, onChangeModal })
 
 		setTimeout(() =>
 		{
-			dispatch(List("browse", category, skip, sync, true)).then(data =>
+			dispatch(List("browse", category, iskip, sync, true)).then(data =>
 			{
 				if(data)
 				{
@@ -75,7 +75,7 @@ function Main({ category, onChangeModal })
 					else
 					{
 						setSkip(
-							skip => skip + data.books.length
+							skip => sync ? data.books.length : skip + data.books.length
 
 						);
 
@@ -189,21 +189,21 @@ function Main({ category, onChangeModal })
 														<div className="column is-narrow">
 															<Metric
 																name  = { books.metrics && books.metrics.reviews === 1 ? "Review" : "Reviews"}
-																value = { books.metrics && books.metrics.reviews || 0 }
+																value = { books.metrics && books.metrics.reviews ? books.metrics.reviews : 0 }
 
 															/>
 														</div>
 														<div className="column is-narrow">
 															<Metric
 																name  = { books.metrics && books.metrics.likes === 1 ? "Like" : "Likes"}
-																value = { books.metrics && books.metrics.likes || 0 }
+																value = { books.metrics && books.metrics.likes ? books.metrics.likes : 0 }
 
 															/>
 														</div>
 														<div className="column is-narrow">
 															<Metric
 																name  = { books.metrics && books.metrics.favorites === 1 ? "Favorite" : "Favorites"}
-																value = { books.metrics && books.metrics.favorites || 0 }
+																value = { books.metrics && books.metrics.favorites ? books.metrics.favorites : 0 }
 
 															/>
 														</div>

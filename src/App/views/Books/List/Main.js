@@ -41,9 +41,9 @@ function Main({ tab, category })
 	const user =
 		useSelector(state => state.Users.data);
 
-	const handleList = useCallback((delayed = true, skip) =>
+	const handleList = useCallback((delayed = true, iskip) =>
 	{
-		if(skip)
+		if(iskip)
 		{
 			setIsLoadingMore(true);
 
@@ -57,7 +57,7 @@ function Main({ tab, category })
 
 		setTimeout(() =>
 		{
-			dispatch(List(tab, category, skip)).then(data =>
+			dispatch(List(tab, category, iskip)).then(data =>
 			{
 				if(data)
 				{
