@@ -49,7 +49,6 @@ function Router()
 				<Route exact path="/recover-password/:email" component={ RecoverPassword } />
 
 				<PrivateRoute exact path="/account" component={ Account } />
-
 				<PrivateRoute exact path="/control-panel/books" component={ DashboardBooksList } admin={ true } />
 
 				<Route
