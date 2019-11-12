@@ -23,7 +23,7 @@ module.exports = SendMail = new Email
 	({
 		host  : process.env.EMAIL_HOST,
 		port  : process.env.EMAIL_PORT,
-		secure: process.env.EMAIL_SECURE,
+		secure: false,
 
 		auth:
 		{
