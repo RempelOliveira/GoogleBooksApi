@@ -50,7 +50,7 @@ module.exports =
 				({
 					template: "SignUp", message: { to: user.email, subject: "Google Books Api - Sign Up" }, locals: { name: user.name, link: process.env.APP_URI + "/#browse" }});
 
-				res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+				res.status(200).json({ token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
 
 			})
 			.catch(error =>
@@ -104,7 +104,7 @@ module.exports =
 
 					};
 
-					res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+					res.status(200).json({ token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
 
 				}
 				else
@@ -162,7 +162,7 @@ module.exports =
 
 						};
 
-						res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+						res.status(200).json({ token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
 
 					})
 					.catch(error =>
@@ -313,7 +313,7 @@ module.exports =
 
 								};
 
-								res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
+								res.status(200).json({ token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
 
 							})
 							.catch(error =>

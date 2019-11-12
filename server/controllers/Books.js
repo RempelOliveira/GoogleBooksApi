@@ -285,7 +285,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
 
 									}
 
@@ -354,7 +354,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
 
 									}
 
@@ -423,7 +423,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
 
 									}
 
@@ -492,7 +492,7 @@ module.exports =
 
 									user: {
 
-										token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+										token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
 
 									}
 
@@ -642,7 +642,7 @@ module.exports =
 
 											user: {
 
-												token: jwt.sign({ iss: "localhost", aud: "localhost", sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
+												token: jwt.sign({ iss: process.env.API_URI, aud: process.env.APP_URI, sub: payload.user.id, user: { ...payload.user, score: user.score }}, config.jwt.secrect, { expiresIn: "100m" })
 
 											}
 
