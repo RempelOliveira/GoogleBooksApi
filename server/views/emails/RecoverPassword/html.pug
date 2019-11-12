@@ -1,0 +1,93 @@
+doctype html  
+html(lang="en")
+	head
+		style(type="text/css").
+			#view
+			{
+				width	 : 100%;
+				margin	 : 0 auto;
+				max-width: 680px;
+
+			}
+			.header
+			{
+				padding: 55px 100px 5px 100px;
+
+			}
+			.header h1
+			{
+				font  : normal 600 36px sans-serif;
+				color : #000;
+				margin: 0;
+
+			}
+			hr
+			{
+				margin	  : 48px 0 60px 0;
+				border	  : none;
+				border-top: 1px solid #d9dbe0;
+
+			}
+			.header p
+			{
+				font: normal 400 16px sans-serif;
+
+			}
+			.main
+			{
+				padding: 24px 100px 60px 100px;
+
+			}
+			.main p
+			{
+				font : normal 400 16px sans-serif;
+				color: #9095a2;
+
+			}
+			.main h2
+			{
+				font  : normal 600 24px sans-serif;
+				color : #000;
+				margin: 0 0 10px 0;
+
+			}
+			.main a
+			{
+				font			: normal 600 12px sans-serif;
+				color			: #fff;
+				width			: 180px;
+				margin			: 13px auto 42px auto;
+				display			: block;
+				padding			: 16px 0 14px 0;
+				text-align		: center;
+				border-radius	: 28px;
+				text-decoration : none;
+				background-color: #039be5;
+
+			}
+			.footer
+			{
+				padding			: 44px 100px 42px;
+				background-color: #000;
+
+			}
+			.footer p
+			{
+				font : normal 400 16px sans-serif;
+				color: #fff;
+
+			}
+	body
+		div#view
+			div(class="header")
+				h1 Hi #{name}!
+			hr
+			div(class="main")
+				p You're receiving this email because you requested an recover password for your Google Books Api account.
+				p Please tap the button below to register a new password.
+				br
+				h2 Code: #{code}
+				br
+				a(href=link) RECOVER PASSWORD
+			div(class="footer")
+				p If you didn't ask to recover your password, please ignore this email
