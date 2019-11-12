@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import "../Shared/styles/styles.css";
-import "../Shared/styles/styles-media.css";
+import "../Shared/styles/styles.scss";
+import "../Shared/styles/styles-media.scss";
 
 import { isAuth, isAdmin } from "../Shared/utils/UserAuthentication";
 
