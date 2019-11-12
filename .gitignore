@@ -3,3 +3,4 @@ node_modules
 /src/Shared/styles/styles.css
 /src/Shared/styles/styles-media.css
 /src/Shared/styles/fonts/fonts.css
+/.env

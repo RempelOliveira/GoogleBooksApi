@@ -1,10 +1,10 @@
 module.exports =
 {
-	db : "mongodb://localhost:27017/google-books-api",
+	db : process.env.DB || "mongodb://localhost:27017/google-books-api",
 	jwt:
 	{
-		key	   : "@jwtKey",
-		secrect: "@jwtSecret"
+		key	   : process.env.jwtKey || "@jwtKey",
+		secrect: process.env.jwtSecret || "@jwtSecret"
 
 	}
 

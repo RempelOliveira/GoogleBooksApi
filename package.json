@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-	"node": "10.16.3"
+    "node": "10.16.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
@@ -19,6 +19,7 @@
     "bulma-divider": "^0.2.0",
     "cors": "^2.8.5",
     "cryptr": "^4.0.2",
+    "dotenv": "^8.2.0",
     "email-templates": "^6.0.2",
     "hamburgers": "github:RempelOliveira/hamburgers",
     "jsonwebtoken": "^8.5.1",
