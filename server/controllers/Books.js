@@ -53,7 +53,7 @@ module.exports =
 					$facet:
 					{
 						"stage1": [{ $group: { _id: null, count: { $sum: 1 }}}],
-						"stage2": [{ $skip: parseInt(data.skip) }, { $limit: 12 }],
+						"stage2": [{ $skip: parseInt(data.skip) || 0 }, { $limit: 12 }],
 
 					}
 
