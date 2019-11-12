@@ -44,7 +44,7 @@ module.exports =
 
 				let aggregate =
 				[
-					{ $match: { ...filters }}, { $unset: [ "_id" ]}
+					{ $match: { ...filters } }
 
 				];
 
@@ -119,6 +119,7 @@ module.exports =
 							{
 								if(!data.metrics)
 								{
+									delete item._id;
 									delete item.likes;
 									delete item.favorites;
 
