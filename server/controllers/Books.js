@@ -149,6 +149,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
@@ -227,6 +231,10 @@ module.exports =
 				})
 				.catch(error =>
 				{
+					console.log
+					(
+						error);
+
 					res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 				});
@@ -289,6 +297,10 @@ module.exports =
 							})
 							.catch(error =>
 							{
+								console.log
+								(
+									error);
+
 								res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 							});
@@ -296,6 +308,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
@@ -350,6 +366,10 @@ module.exports =
 							})
 							.catch(error =>
 							{
+								console.log
+								(
+									error);
+
 								res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 							});
@@ -357,6 +377,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
@@ -411,6 +435,10 @@ module.exports =
 							})
 							.catch(error =>
 							{
+								console.log
+								(
+									error);
+
 								res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 							});
@@ -418,6 +446,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
@@ -472,6 +504,10 @@ module.exports =
 							})
 							.catch(error =>
 							{
+								console.log
+								(
+									error);
+
 								res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 							});
@@ -479,6 +515,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
@@ -533,6 +573,10 @@ module.exports =
 				})
 				.catch(error =>
 				{
+					console.log
+					(
+						error);
+
 					res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 				});
@@ -608,6 +652,10 @@ module.exports =
 									})
 									.catch(error =>
 									{
+										console.log
+										(
+											error);
+
 										res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 									});
@@ -631,6 +679,10 @@ module.exports =
 								}
 								catch(error)
 								{
+									console.log
+									(
+										error);
+
 									res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 								}
@@ -640,6 +692,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
@@ -718,6 +774,10 @@ module.exports =
 					})
 					.catch(error =>
 					{
+						console.log
+						(
+							error);
+
 						res.status(400).json({ error: { internal: "An internal error occurred." }});
 
 					});
