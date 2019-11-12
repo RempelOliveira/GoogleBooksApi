@@ -11,6 +11,8 @@ const Users =
 const SendMail =
 	require("../configs/nodemailer.config.js");
 
+console.log(process.env.MONGODB_URI);
+
 module.exports =
 {
 	SignUp: (req, res) =>
@@ -46,7 +48,7 @@ module.exports =
 
 				SendMail.send
 				({
-					template: "SignUp", message: { to: user.email, subject: "Google Books Api - Sign Up" }, locals: { name: user.name, link: "http://localhost:3001/#browse" }});
+					template: "SignUp", message: { to: user.email, subject: "Google Books Api - Sign Up" }, locals: { name: user.name, link: process.env.APP_URI + "/#browse" }});
 
 				res.status(200).json({ token: jwt.sign({ iss: "localhost", aud: "localhost", sub: user._id, user: payload }, config.jwt.secrect, { expiresIn: "100m" }) });
 
@@ -244,7 +246,7 @@ module.exports =
 						{
 							SendMail.send
 							({
-								template: "RecoverPassword", message: { to: user.email, subject: "Google Books Api - Recover Password" }, locals: { name: user.name, code: code, link: "http://localhost:3001/recover-password/" + Crypt.encrypt(user.email) }});
+								template: "RecoverPassword", message: { to: user.email, subject: "Google Books Api - Recover Password" }, locals: { name: user.name, code: code, link: process.env.APP_URI + "/recover-password/" + Crypt.encrypt(user.email) }});
 
 							res.status(200).json({ success: true });
 
