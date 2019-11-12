@@ -2,11 +2,14 @@ const path 		 = require("path");
 const nodemailer = require("nodemailer");
 const Email 	 = require("email-templates");
 
+const dotenv 	 = require("dotenv");
+	  dotenv.config();
+
 module.exports = SendMail = new Email
 ({
 	message:
 	{
-		from: "misty.macgyver@ethereal.email"
+		from: process.env.EMAIL_FROM
 
 	},
 
@@ -18,14 +21,14 @@ module.exports = SendMail = new Email
 
 	transport: nodemailer.createTransport
 	({
-		host  : "smtp.ethereal.email",
-		port  : 587,
-		secure: false,
+		host  : process.env.EMAIL_HOST,
+		port  : process.env.EMAIL_PORT,
+		secure: process.env.EMAIL_SECURE,
 
-		auth  :
+		auth:
 		{
-			user: "misty.macgyver@ethereal.email",
-			pass: "qCvpGQuJ5UbS4xTpYE"
+			user: process.env.EMAIL_AUTH_USER,
+			pass: process.env.EMAIL_AUTH_PASSWORD
 
 		},
 
