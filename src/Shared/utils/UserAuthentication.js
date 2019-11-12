@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import cryptr from "cryptr";
 
-const TOKEN_KEY    = "@jwtKey";
-const TOKEN_SECRET = "@jwtSecret";
+const TOKEN_KEY    = process.env.REACT_APP_JWT_KEY;
+const TOKEN_SECRET = process.env.REACT_APP_JWT_SECRECT;
 
 function isAuth()
 {

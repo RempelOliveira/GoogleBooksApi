@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { setAuthUser, getAuthUser, setAuthPassword } from "../utils/UserAuthentication.js";
 
-const api = "http://" + window.location.hostname + ":3002/api/users";
+const api = process.env.REACT_APP_API + "/api/users";
 
 export const SIGNUP_USER  	  		 = "SIGNUP_USER";
 export const SIGNIN_USER  	  		 = "SIGNIN_USER";

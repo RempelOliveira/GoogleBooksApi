@@ -3,7 +3,7 @@ import axios from "axios";
 import { UPDATE_USER, SIGNOUT_USER } from "./Users";
 import { setAuthUser, getAuthUser } from "../utils/UserAuthentication.js";
 
-const api = window.location.protocol + "//" + window.location.hostname + (window.location.hostname === "localhost" ? ":3002" : "") + "/api/books";
+const api = process.env.REACT_APP_API + "/api/books";
 
 export const LIST   = "LIST";
 export const READ   = "READ";
