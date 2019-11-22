@@ -56,7 +56,7 @@ function Book({ title, subtitle, rating, reviews, details, thumbnail })
 					</span>
 				</p>
 				<p className="reviews">
-					{ reviews > 9999 ? "+10k" : reviews } Reviews
+					{ reviews > 9999 ? "+10k" : reviews } Review{ reviews === 0 || reviews > 1 ? "s" : "" }
 				</p>
 				{
 					!details
