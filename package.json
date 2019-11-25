@@ -34,11 +34,9 @@
     "shortid": "^2.2.14"
   },
   "scripts": {
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "npm-run-all -p start-js",
     "start-js": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
-    "build-css": "node-sass-chokidar --include-path /src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "watch-css": "npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
