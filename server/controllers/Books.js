@@ -541,7 +541,7 @@ module.exports =
 
 		function find(payload, isAuthError)
 		{
-			Books.findOne({ id: data.id }, { _id: false, id: true, title: true, reviews: data.all.toString() == "true" ? true : { $slice: [0, 4] }}).populate("reviews.user", { name: true })
+			Books.findOne({ id: data.id }, { _id: false, id: true, title: true, reviews: (data.all ? data.all.toString() : "false") == "true" ? true : { $slice: [0, 4] }}).populate("reviews.user", { name: true })
 
 				.then(async book =>
 				{
@@ -613,7 +613,7 @@ module.exports =
 
 					.then(book =>
 					{
-						Books.findOneAndUpdate({ id: data.id }, { "rating.stars": ((book.rating.stars * book.rating.total) + data.rating) / (book.rating.total + 1), $inc: { "rating.total": data.rating, "rating.users": 1 }, $push: { reviews: { $each: [{ user: payload.user.id, rating: data.rating, review: data.review }], $sort: { datetime: -1 } } }}, { new: true, runValidators: true, fields: { _id: false, id: true, title: true, reviews: data.all.toString() == "true" ? true : { $slice: [0, 4] }}}).populate("reviews.user", { name: true })
+						Books.findOneAndUpdate({ id: data.id }, { "rating.stars": ((book.rating.stars * book.rating.total) + data.rating) / (book.rating.total + 1), $inc: { "rating.total": data.rating, "rating.users": 1 }, $push: { reviews: { $each: [{ user: payload.user.id, rating: data.rating, review: data.review }], $sort: { datetime: -1 } } }}, { new: true, runValidators: true, fields: { _id: false, id: true, title: true, reviews: (data.all ? data.all.toString() : "false") == "true" ? true : { $slice: [0, 4] }}}).populate("reviews.user", { name: true })
 
 							.then(book =>
 							{
