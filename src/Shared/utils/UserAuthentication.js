@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import cryptr from "cryptr";
+import crypto from "crypto";
 
 const TOKEN_KEY    = process.env.REACT_APP_JWT_KEY;
 const TOKEN_SECRET = process.env.REACT_APP_JWT_SECRECT;
@@ -96,8 +96,10 @@ function getAuthUser(getToken = false)
 
 function setAuthPassword(password)
 {
-	return new cryptr(TOKEN_SECRET)
-		.encrypt(password);
+	const cipher = crypto.createCipheriv("aes-256-cbc", TOKEN_SECRET, TOKEN_KEY);
+		  cipher.update(password, "utf8", "base64");
+
+	return cipher.final("base64");
 
 };
 
