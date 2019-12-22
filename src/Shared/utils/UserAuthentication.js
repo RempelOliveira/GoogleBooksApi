@@ -96,6 +96,8 @@ function getAuthUser(getToken = false)
 
 function setAuthPassword(password)
 {
+	console.log(TOKEN_SECRET, TOKEN_KEY);
+
 	const cipher = crypto.createCipheriv("aes-256-cbc", TOKEN_SECRET, TOKEN_KEY);
 		  cipher.update(password, "utf8", "base64");
 
