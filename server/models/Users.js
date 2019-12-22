@@ -1,9 +1,6 @@
-const cryptr   = require("cryptr");
+const crypto   = require("../utils/crypto.js");
 const config   = require("../configs/keys.config.js");
 const mongoose = require("mongoose");
-
-const Crypt =
-	new cryptr(config.jwt.secrect);
 
 const Users = mongoose.model("Users", new mongoose.Schema
 ({
@@ -69,7 +66,7 @@ const Users = mongoose.model("Users", new mongoose.Schema
 					message  : "Enter at least 6 characters",
 					validator: value =>
 					{
-						return !(Crypt.decrypt(value).trim().length < 6);
+						return !(crypto.decrypt(value).trim().length < 6);
 
 					}
 
@@ -79,7 +76,7 @@ const Users = mongoose.model("Users", new mongoose.Schema
 					message  : "Enter a maximum of 12 characters",
 					validator: value =>
 					{
-						return !(Crypt.decrypt(value).trim().length > 12);
+						return !(crypto.decrypt(value).trim().length > 12);
 
 					}
 

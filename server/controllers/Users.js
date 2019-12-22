@@ -1,17 +1,12 @@
 const jwt 	 = require("jsonwebtoken");
-const cryptr = require("cryptr");
 const config = require("../configs/keys.config.js");
-
-const Crypt =
-	new cryptr(config.jwt.secrect);
+const crypto = require("../utils/crypto.js");
 
 const Users =
 	require("../models/Users");
 
 const SendMail =
 	require("../configs/nodemailer.config.js");
-
-console.log(process.env.MONGODB_URI);
 
 module.exports =
 {
@@ -92,7 +87,7 @@ module.exports =
 
 			.then(user =>
 			{
-				if(user && Crypt.decrypt(data.password) === Crypt.decrypt(user.password.current))
+				if(user && crypto.decrypt(data.password) === crypto.decrypt(user.password.current))
 				{
 					let payload =
 					{
@@ -246,7 +241,7 @@ module.exports =
 						{
 							SendMail.send
 							({
-								template: "RecoverPassword", message: { to: user.email, subject: "Google Books Api - Recover Password" }, locals: { name: user.name, code: code, link: process.env.APP_URI + "/recover-password/" + Crypt.encrypt(user.email) }});
+								template: "RecoverPassword", message: { to: user.email, subject: "Google Books Api - Recover Password" }, locals: { name: user.name, code: code, link: process.env.APP_URI + "/recover-password/" + crypto.encrypt(user.email) }});
 
 							res.status(200).json({ success: true });
 
@@ -291,7 +286,7 @@ module.exports =
 
 		});
 
-		Users.findOne({ email: Crypt.decrypt(data.email), "password.recover.code": Crypt.decrypt(data.code) })
+		Users.findOne({ email: crypto.decrypt(data.email), "password.recover.code": crypto.decrypt(data.code) })
 
 			.then(user =>
 			{
