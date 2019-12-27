@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function PageNotFound({ isHome, onClick })
+function BadRequest({ isHome, onClick })
 {
 	return (
 		<main>
@@ -41,4 +41,4 @@ function PageNotFound({ isHome, onClick })
 
 };
 
-export default PageNotFound;
+export default BadRequest;
