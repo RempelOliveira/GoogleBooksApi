@@ -19,8 +19,7 @@ function isAdmin()
 
 function setAuthUser(token, remember)
 {
-	remember =
-		remember === true || localStorage.getItem(TOKEN_KEY + "_remember") === "true";
+	remember = remember === true || localStorage.getItem(TOKEN_KEY + "_remember") === "true";
 
 	if(token)
 	{
