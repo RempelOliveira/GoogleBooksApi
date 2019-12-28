@@ -476,7 +476,7 @@ module.exports =
 
 					.then(book =>
 					{
-						Users.findByIdAndUpdate(payload.user.id, { $inc: { "score.favorites": 1 }}, { new: true })
+						Users.findByIdAndUpdate(payload.user.id, { $inc: { "score.favorites": -1 }}, { new: true })
 
 							.then(user =>
 							{
